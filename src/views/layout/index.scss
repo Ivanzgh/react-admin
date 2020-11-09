@@ -1,0 +1,19 @@
+.home-main {
+  height: 100vh;
+
+  .ant-layout {
+    height: 100%;
+  }
+  .ant-breadcrumb {
+    padding: 10px 20px 0;
+  }
+
+  .content-wrap {
+    padding: 20px;
+    background: #f1f3f5;
+
+    .content {
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.notmatch{
+  display: flex;
+  height: 65vh;
+  align-items: center;
+  justify-content: center;
+
+  .info{
+    font-size: 30px;
+    color: #333;
+  }
+  .desc ul{
+    list-style: none;
+  }
+  .img-info{
+    width: 300px;
+    height: 300px;
+  }
+}

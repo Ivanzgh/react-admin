@@ -1,0 +1,89 @@
+
+$color: #215bad;
+$bg-color: #f7f8fa;
+
+@mixin w($width:100%, $max-width:1200px) {
+  width: $width;
+  max-width: $max-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@mixin wh($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin boxShadow($x,$y,$blur,$color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin flex($justify-content: center,$align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin title-common($font-size: 30px) {
+  font-size: $font-size;
+  color: $color;
+  text-align: center;
+  .title-underline {
+    width: 40px;
+    height: 5px;
+    background-color: $color;
+    margin: 20px auto 30px;
+}
+}
+
+@mixin active-bar {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(80deg,#4762fe 0,#a14faf 100%);
+}
+
+@mixin img-whirl($w:70px, $h:70px) {
+  @-webkit-keyframes rotation{
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+}
+  img {
+    width: $w;
+    height: $h;
+    -webkit-transform: rotate(360deg);
+    animation: rotation 3s linear infinite;
+    -moz-animation: rotation 3s linear infinite;
+    -webkit-animation: rotation 3s linear infinite;
+    -o-animation: rotation 3s linear infinite;
+}
+}
+
+@mixin common-content {
+  position: relative;
+  margin: 20px;
+  box-sizing: border-box;
+  /deep/ .el-card {
+    min-height: calc(100vh - 92px);
+}
+}
