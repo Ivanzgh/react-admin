@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from '../views/home/index'
-import NotMatch from '../views/notMatch'
+import NoFoundPage from '../views/404'
 import Layout from "../views/layout/index";
 import Table from '../views/table'
 import Form from '../views/form'
@@ -18,7 +18,7 @@ function Router() {
                 <Route path='/' render={() =>
                     <Layout>
                         <Switch>
-                            <Route path='/index'>
+                            <Route exact path='/index'>
                                 <Home />
                             </Route>
                             <Route path='/table'>
@@ -30,11 +30,11 @@ function Router() {
                             <Route path='/form' component={Form} />
                             <Route path='/echarts/bar' component={EchartsBar} />
                             <Route path='/echarts/pie' component={EchartsPie} />
-                            <Route component={NotMatch} />
+                            <Route component={NoFoundPage} />
                         </Switch>
                     </Layout>
                 } />
-                <Route component={NotMatch} />
+                <Route component={NoFoundPage} />
             </Switch>
         </BrowserRouter>
     )

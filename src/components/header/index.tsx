@@ -27,7 +27,6 @@ function Headers() {
     const [name, setName] = useState('zgh')
     const [time, setTime] = useState('')
     const collapsed = useSelector((state: RootState) => state.collapsed)
-    console.log(collapsed);
     
     const dispatch = useDispatch()
 
